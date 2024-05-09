@@ -46,7 +46,8 @@ const Home = () => {
   return (
     <Box
       sx={{
-        backgroundImage: "url(src/assets/font-page.jpg)",
+        backgroundImage:
+          "url(https://plazakarnaval.devioz.com/imgs/font-page.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -77,7 +78,7 @@ const Home = () => {
             height: "5rem",
             margin: "1rem auto",
           }}
-          src="src/assets/logo-karnaval.png"
+          src="https://plazakarnaval.devioz.com/imgs/logo-karnaval.png"
           alt="Logo"
         />
         <Typography
