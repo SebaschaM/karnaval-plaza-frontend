@@ -46,20 +46,38 @@ const Home = () => {
   return (
     <Box
       sx={{
-        backgroundImage:
-          "url(https://plazakarnaval.devioz.com/imgs/font-page.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
+        height: "100%", // El contenedor debería ser lo suficientemente alto para incluir el contenido
+        minHeight: "100vh", // Asegúrate de que tenga al menos la altura de la ventana de visualización
+        padding: { xs: "0.95rem", sm: "3rem" },
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
+        position: "relative", // Asegúrate de que el contenido esté en relación con la imagen de fondo
       }}
     >
+      <Box
+        sx={{
+          backgroundImage:
+            "url(https://plazakarnaval.devioz.com/imgs/font-page.jpg)",
+          backgroundSize: "cover", // Asegúrate de que ocupe todo el espacio
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed", // La imagen se mantendrá fija
+          position: "absolute",
+          opacity: 0.5,
+          zIndex: -1,
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%", // Asegúrate de que la imagen ocupe todo el espacio del contenedor
+          bgcolor: "rgba(0, 0, 0, 0.5)",
+        }}
+      />
       <Card
         sx={{
           display: "flex",
           opacity: 0.97,
+          marginTop: "5rem",
           flexDirection: "column",
           p: 4,
           width: "30rem",
@@ -69,6 +87,7 @@ const Home = () => {
           rowGap: 3,
           [theme.breakpoints.down("sm")]: {
             width: "90%",
+            marginTop: "0",
           },
         }}
       >
@@ -157,7 +176,11 @@ const Home = () => {
             >
               Enviar
             </Button>
-            <Button variant="text" color="secondary">
+            <Button
+              variant="text"
+              color="secondary"
+              onClick={() => navigate("/cart-menu")}
+            >
               Omitir
             </Button>
           </Box>
