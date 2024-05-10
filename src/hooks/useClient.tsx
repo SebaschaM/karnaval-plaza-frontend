@@ -5,14 +5,23 @@ import { handleManagmentError } from "../helpers/HookManagmentError";
 const useClient = () => {
   const addPersonalInformation = async (data: any) => {
     try {
-      const response = await karnavalApi.post("/insert-data", data);
+      const response = await karnavalApi.post("/client/insert-data", data);
       return response.data;
     } catch (error) {
       return handleManagmentError((error as AxiosError) || (error as Error));
     }
   };
 
-  return { addPersonalInformation };
+  const getPersonalInformation = async () => {
+    try {
+      const response = await karnavalApi.get("/client/get-data");
+      return response.data;
+    } catch (error) {
+      return handleManagmentError((error as AxiosError) || (error as Error));
+    }
+  };
+
+  return { addPersonalInformation, getPersonalInformation };
 };
 
 export default useClient;

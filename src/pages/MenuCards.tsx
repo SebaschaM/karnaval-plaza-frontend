@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import menuItems from "../seed/MenuItems";
 import CardItem from "../components/CardItem";
 
