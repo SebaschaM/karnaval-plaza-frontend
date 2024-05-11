@@ -1,7 +1,7 @@
 const menuItems = [
   {
     id: 1,
-    food: "Burger",
+    food: "27_puerto_cevicheria",
     logo: "https://plazakarnaval.devioz.com/imgs/27_puerto_cevicheria.png",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -10,7 +10,7 @@ const menuItems = [
   },
   {
     id: 2,
-    food: "Pizza",
+    food: "Bobable",
     logo: "https://plazakarnaval.devioz.com/imgs/Bobable.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -19,7 +19,7 @@ const menuItems = [
   },
   {
     id: 3,
-    food: "Pasta",
+    food: "Caja_China_Criolla",
     logo: "https://plazakarnaval.devioz.com/imgs/Caja_China_Criolla.png",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -28,7 +28,7 @@ const menuItems = [
   },
   {
     id: 4,
-    food: "Salad",
+    food: "Cappoannoiere",
     logo: "https://plazakarnaval.devioz.com/imgs/Cappoannoiere.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -37,7 +37,7 @@ const menuItems = [
   },
   {
     id: 5,
-    food: "Dessert",
+    food: "Chingonn",
     logo: "https://plazakarnaval.devioz.com/imgs/Chingonn.jpg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -46,7 +46,7 @@ const menuItems = [
   },
   {
     id: 6,
-    food: "Drink",
+    food: "Choza_Anaconda",
     logo: "https://plazakarnaval.devioz.com/imgs/Choza_Anaconda.jpg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -55,7 +55,7 @@ const menuItems = [
   },
   {
     id: 7,
-    food: "Others",
+    food: "LaPintadita",
     logo: "https://plazakarnaval.devioz.com/imgs/LaPintadita.jpg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -63,7 +63,7 @@ const menuItems = [
   },
   {
     id: 8,
-    food: "Others",
+    food: "Lima_Kombo",
     logo: "https://plazakarnaval.devioz.com/imgs/Lima_Kombo.jpg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -71,7 +71,7 @@ const menuItems = [
   },
   {
     id: 9,
-    food: "Others",
+    food: "PeruvianFries",
     logo: "https://plazakarnaval.devioz.com/imgs/PeruvianFries.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -79,7 +79,7 @@ const menuItems = [
   },
   {
     id: 10,
-    food: "Others",
+    food: "Primazo2",
     logo: "https://plazakarnaval.devioz.com/imgs/Primazo2.jpg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -87,7 +87,7 @@ const menuItems = [
   },
   {
     id: 11,
-    food: "Others",
+    food: "Q'Pincho",
     logo: "https://plazakarnaval.devioz.com/imgs/Q'Pincho.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -95,7 +95,7 @@ const menuItems = [
   },
   {
     id: 12,
-    food: "Others",
+    food: "Sidney",
     logo: "https://plazakarnaval.devioz.com/imgs/Sidney.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -103,7 +103,7 @@ const menuItems = [
   },
   {
     id: 13,
-    food: "Others",
+    food: "Taypaa",
     logo: "https://plazakarnaval.devioz.com/imgs/Taypaa.png",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -111,7 +111,7 @@ const menuItems = [
   },
   {
     id: 14,
-    food: "Others",
+    food: "TioCucho",
     logo: "https://plazakarnaval.devioz.com/imgs/TioCucho.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
@@ -119,7 +119,7 @@ const menuItems = [
   },
   {
     id: 15,
-    food: "Others",
+    food: "Ukumaris",
     logo: "https://plazakarnaval.devioz.com/imgs/Ukumaris.jpeg",
     urlCardMenu:
       "https://www.canva.com/design/DAGEthUL1Jg/Ac6pNZKvnKNEgKrDT_6BNA/view",
