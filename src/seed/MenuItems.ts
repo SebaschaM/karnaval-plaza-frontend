@@ -2,7 +2,7 @@ const menuItems = [
   {
     id: 1,
     food: "Burger",
-    logo: "https://peru21.pe/resizer/y30E6omiGEn6gr7SvthQz15UiTY=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/XD6SVNMQNRCIBF5QBYUQ7GMNPE.jpg",
+    logo: "https://plazakarnaval.devioz.com/imgs/font-page.jpg",
     description:
       "A burger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun.",
   },
