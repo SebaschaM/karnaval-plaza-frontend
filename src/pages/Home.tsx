@@ -5,7 +5,10 @@ import {
   TextField,
   Button,
   FormControl,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import theme from "../../theme";
 import useClient from "../hooks/useClient";
@@ -16,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const { addPersonalInformation } = useClient();
+  const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false);
   const {
     register,
     handleSubmit,
@@ -24,6 +28,12 @@ const Home = () => {
 
   const onSubmit = async (data: any) => {
     try {
+      if (!privacyPolicyAccepted) {
+        toast.error("Debes aceptar las políticas de privacidad", {
+          autoClose: 1600,
+        });
+        return;
+      }
       const { ok, message, response } = await addPersonalInformation(data);
       console.log(response);
       if (ok) {
@@ -46,30 +56,30 @@ const Home = () => {
   return (
     <Box
       sx={{
-        height: "100%", // El contenedor debería ser lo suficientemente alto para incluir el contenido
-        minHeight: "100vh", // Asegúrate de que tenga al menos la altura de la ventana de visualización
+        height: "100%",
+        minHeight: "100vh",
         padding: { xs: "0.95rem", sm: "3rem" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        position: "relative", // Asegúrate de que el contenido esté en relación con la imagen de fondo
+        position: "relative",
       }}
     >
       <Box
         sx={{
           backgroundImage:
             "url(https://plazakarnaval.devioz.com/imgs/font-page.jpg)",
-          backgroundSize: "cover", // Asegúrate de que ocupe todo el espacio
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed", // La imagen se mantendrá fija
+          backgroundAttachment: "fixed",
           position: "absolute",
           opacity: 0.5,
           zIndex: -1,
           top: 0,
           left: 0,
           width: "100%",
-          height: "100%", // Asegúrate de que la imagen ocupe todo el espacio del contenedor
+          height: "100%",
           bgcolor: "rgba(0, 0, 0, 0.5)",
         }}
       />
@@ -166,6 +176,18 @@ const Home = () => {
                 Este campo es requerido
               </Typography>
             )}
+          </Box>
+          <Box>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={privacyPolicyAccepted}
+                  onChange={(e) => setPrivacyPolicyAccepted(e.target.checked)}
+                  color="primary"
+                />
+              }
+              label="Acepto las políticas de privacidad"
+            />
           </Box>
           <Box display={"flex"} flexDirection={"column"} rowGap={1}>
             <Button
