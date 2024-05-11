@@ -15,7 +15,8 @@ import {
   Grid,
   Card,
   CardContent,
-  Button, // Importamos el componente Button de Material-UI
+  Button,
+  TextField, // Importa TextField de Material-UI
 } from "@mui/material";
 import useClient from "../hooks/useClient";
 import * as XLSX from "xlsx";
@@ -40,6 +41,7 @@ const CustomerTable = () => {
   const [dataClient, setDataClient] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [searchQuery, setSearchQuery] = useState(""); // Nuevo estado para la consulta de búsqueda
 
   const onGetPersonalInformation = async () => {
     const response = await getPersonalInformation();
@@ -91,6 +93,14 @@ const CustomerTable = () => {
     setPage(0);
   };
 
+  // Función para filtrar los clientes basados en la consulta de búsqueda
+  const filterClients = (client: any) => {
+    return (
+      client.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      client.correo.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  };
+
   return (
     <Box sx={{ backgroundColor: "white", minHeight: "100vh" }}>
       <AppBar position="static">
@@ -127,7 +137,7 @@ const CustomerTable = () => {
                   color: "white",
                   textAlign: "center",
                   cursor: "pointer",
-                boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.1)",
+                  boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.1)",
                   transition: "all 0.3s",
                   "&:hover": {
                     transform: "scale(1.05)",
@@ -151,6 +161,24 @@ const CustomerTable = () => {
             </Grid>
           ))}
         </Grid>
+
+        {/* Campo de búsqueda */}
+        <TextField
+          label="Buscar cliente"
+          variant="outlined"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          sx={{
+            marginTop: "1rem",
+            width: "20%",
+            [theme.breakpoints.down("md")]: {
+              width: "50%",
+            },
+            [theme.breakpoints.down("sm")]: {
+              width: "100%",
+            },
+          }}
+        />
 
         {/* Tabla de clientes */}
         <TableContainer
@@ -176,7 +204,7 @@ const CustomerTable = () => {
                       boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.1)",
                       padding: "0.75rem",
                       textAlign: "center",
-                      width: `${100 / headers.length}%`, // Ancho dinámico basado en el número de columnas
+                      width: header.id === "id" ? "10%" : "auto", // Ajustar el ancho de la columna "ID"
                     }}
                   >
                     {header.label}
@@ -186,6 +214,7 @@ const CustomerTable = () => {
             </TableHead>
             <TableBody>
               {dataClient
+                .filter(filterClients) // Aplicar filtro
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row: any) => (
                   <TableRow
@@ -210,7 +239,7 @@ const CustomerTable = () => {
           <TablePagination
             rowsPerPageOptions={[5, 10, 15]}
             component="div"
-            count={dataClient.length}
+            count={dataClient.filter(filterClients).length} // Actualizar la cantidad de filas según los resultados filtrados
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}

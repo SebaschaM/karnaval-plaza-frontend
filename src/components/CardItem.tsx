@@ -17,12 +17,18 @@ const CardItem = ({ item }: any) => {
     >
       <CardMedia sx={{ height: 140 }} image={item.logo} title={item.food} />
       <CardContent>
-        <Typography variant="h5" component="div" fontWeight={"bold"} fontSize={'1.3rem'} marginBottom={'0.8rem'}>
+        <Typography
+          variant="h5"
+          component="div"
+          fontWeight={"bold"}
+          fontSize={"1.3rem"}
+          marginBottom={"0.8rem"}
+        >
           {item.food}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        {/* <Typography variant="body2" color="text.secondary">
           {item.description}
-        </Typography>
+        </Typography> */}
       </CardContent>
     </Card>
   );

@@ -97,7 +97,7 @@ const Home = () => {
             height: "5rem",
             margin: "1rem auto",
           }}
-          src="https://plazakarnaval.devioz.com/imgs/logo-karnaval.png"
+          src="https://plazakarnaval.devioz.com/imgs/logo_plaza_karnaval.png"
           alt="Logo"
         />
         <Typography
@@ -120,7 +120,7 @@ const Home = () => {
         >
           <Box>
             <TextField
-              label="Nombre"
+              label="Nombre completo"
               variant="outlined"
               fullWidth
               {...register("name", { required: true })}
