@@ -127,7 +127,7 @@ const CustomerTable = () => {
       </AppBar>
 
       <Box sx={{ padding: "2rem" }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={3}>
           {/* Tarjetas de dashboard */}
           {indicatorCards.map((card) => (
             <Grid item key={card.title} xs={12} sm={6} md={3}>

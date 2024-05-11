@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 
 const CardItem = ({ item }: any) => {
   return (
@@ -14,22 +14,32 @@ const CardItem = ({ item }: any) => {
           cursor: "pointer",
         },
       }}
+      onClick={() => window.open(item.urlCardMenu, "_blank")}
     >
-      <CardMedia sx={{ height: 140 }} image={item.logo} title={item.food} />
-      <CardContent>
-        <Typography
-          variant="h5"
-          component="div"
-          fontWeight={"bold"}
-          fontSize={"1.3rem"}
-          marginBottom={"0.8rem"}
-        >
-          {item.food}
-        </Typography>
-        {/* <Typography variant="body2" color="text.secondary">
+      <img
+        src={item.logo}
+        alt={item.food}
+        style={{
+          width: "100%",
+          height: "15rem",
+          objectFit: "cover",
+          borderTopLeftRadius: "0.5rem",
+          borderTopRightRadius: "0.5rem",
+        }}
+      />
+
+      <Typography
+        variant="h5"
+        component="div"
+        fontWeight={"bold"}
+        fontSize={"1.3rem"}
+        padding={"0.8rem 0"}
+      >
+        {item.food}
+      </Typography>
+      {/* <Typography variant="body2" color="text.secondary">
           {item.description}
         </Typography> */}
-      </CardContent>
     </Card>
   );
 };
